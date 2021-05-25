@@ -2,26 +2,20 @@
 #ifndef PageLoader_hpp
 #define PageLoader_hpp
 
-#include <string>
+#include <curl/curl.h>
 #include "Page.hpp"
 
 class PageLoader {
     
 public:
-    
-    PageLoader();
 
-    /**
-     * @return The content of HTML document.
-     */
-    Page load(const std::string& url);
+    Page load (const std::string& url);
+
+public:
+
+    static std::size_t write_data(void* ptr, std::size_t size, std::size_t nmemb, std::string* data);
+
     
-private:
-    
-    /**
-     * Callback function for writing received data.
-     */
-    static size_t curlCallback(char* contents, size_t size, size_t nmemb, std::string* s);
 };
 
-#endif // !PageLoader_hpp
+#endif 
