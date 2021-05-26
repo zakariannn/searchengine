@@ -11,7 +11,7 @@ class LinkExtractor
 public:
     LinkExtractor() = default;
 
-    // extract all links from current Document
+    // extract all links from cur Document
     std::vector<std::string> extract(HtmlDocument& doc);
 
     std::vector<std::pair<std::string, std::string> > checkByDomain(std::vector<std::string>& links, const std::string& domain);
