@@ -3,17 +3,19 @@
 
 #include <string>
 
+/*returns html code and status*/
+
 class Page
 {
     private:
-        std::string body;
-        int status;
+        std::string body;  // html code
+        int status;      // http code
 
     public:
-        Page(std::string& body, int status);
-        ~Page();
+        Page(std::string& body, int status); // constructor
+        ~Page();                    //destructor
       
-        const std::string& getBody() const;
+        const std::string& getBody() const; 
           int getStatus() const;
         
 };
